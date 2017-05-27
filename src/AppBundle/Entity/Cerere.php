@@ -313,4 +313,3 @@ class Cerere
         return $this->alte_specificatii;
     }
 }
-

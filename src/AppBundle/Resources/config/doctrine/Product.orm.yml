@@ -1,0 +1,32 @@
+AppBundle\Entity\Product:
+  type: entity
+  repositoryClass: AppBundle\Repository\ProductRepository
+  table: product
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    name:
+      type: string
+      length: 255
+    width:
+      type: integer
+    height:
+      type: integer
+    opening:
+      type: string
+      length: 100
+    color:
+      type: string
+      length: 100
+    price:
+      type: string
+      length: 100
+    stock:
+      type: integer
+    tip:
+      type: integer
+    image_path:
+      type: string
+      length: 255

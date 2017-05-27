@@ -16,3 +16,7 @@ cerere_oferta:
 cerere_oferta_success:
   path: /cerere_oferta_success
   defaults: { _controller: AppBundle:Oferta:success }
+
+ferestre_simple:
+  path: /ferestre_simple
+  defaults: { _controller: AppBundle:Product:ferestreSimple }

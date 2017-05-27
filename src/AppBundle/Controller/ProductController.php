@@ -11,4 +11,14 @@ class ProductController extends Controller
     {
         return $this->render('AppBundle:Product:tamplariepvc.html.twig');
     }
+
+    public function ferestreSimpleAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $ferestre = $em->getRepository('AppBundle:Product')->getFerestreSimple();
+
+        return $this->render('AppBundle:Product:ferestre_simple.html.twig', array(
+            'ferestre' => $ferestre
+        ));
+    }
 }
