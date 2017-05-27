@@ -4,3 +4,11 @@ app:
 
 logout:
     path:   /logout
+
+tamplarie_pvc:
+  path: /tamplarie_pvc
+  defaults: { _controller: AppBundle:Product:tamplariepvc }
+
+cerere_oferta:
+  path: /cerere_oferta
+  defaults: { _controller: AppBundle:Oferta:cerere }

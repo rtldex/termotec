@@ -1,0 +1,34 @@
+AppBundle\Entity\Cerere:
+  type: entity
+  table: cerere
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    name:
+      type: string
+      length: 255
+    email:
+      type: string
+      length: 255
+    latime:
+      type: integer
+    deschidere:
+      type: string
+      length: 100
+    cantitate:
+      type: integer
+    prenume:
+      type: string
+      length: 255
+    tipul_produsului:
+      type: string
+      length: 100
+    inaltime:
+      type: integer
+    culoare:
+      type: string
+      length: 100
+    alte_specificatii:
+      type: text

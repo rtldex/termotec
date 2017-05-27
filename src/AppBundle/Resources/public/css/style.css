@@ -25,3 +25,16 @@
     float: right;
     max-width: 100%;
 }
+
+.spacer10, .spacer20, .spacer30 {
+    display: block;;
+}
+.spacer10 {
+    height: 10px;
+}
+.spacer20 {
+    height: 20px;
+}
+.spacer30 {
+    height: 30px;
+}

@@ -1,0 +1,70 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block content %}
+<div class="container">
+    <div class="cerere_oferta_form">
+        <form name="form_cerere_oferta" method="post" action="">
+            <table border="0" width="500" align="center" class="demo-table">
+                <tr>
+                    <td>Nume</td>
+                    <td><input type="text" class="demoInputBox" name="firstName" placeholder="Type your first name..."
+                               value=""></td>
+
+                    <td>Prenume</td>
+                    <td><input type="text" class="demoInputBox" name="lastName" placeholder="Type your last name..."
+                               value=""></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="text" class="demoInputBox" name="email" placeholder="Type your email..."
+                               value=""></td>
+
+                    <td>Tipul produsului</td>
+                    <td><input type="text" class="demoInputBox" name="product_type" placeholder="Type the product type..."
+                               value=""></td>
+                </tr>
+
+                <tr>
+                    <td>Latime</td>
+                    <td><input type="text" class="demoInputBox" name="width" placeholder="Type the width..."
+                               value=""></td>
+
+                    <td>Inaltime</td>
+                    <td><input type="text" class="demoInputBox" name="height" placeholder="Type the height..."
+                               value=""></td>
+                </tr>
+
+                <tr>
+                    <td>Deschidere</td>
+                    <td><input type="text" class="demoInputBox" name="opening" placeholder="Type the opening..."
+                               value=""></td>
+
+                    <td>Culoare</td>
+                    <td><input type="text" class="demoInputBox" name="color" placeholder="Type the color..."
+                               value=""></td>
+                </tr>
+
+                <tr>
+                    <td>Cantitate</td>
+                    <td><input type="text" class="demoInputBox" name="quantity" placeholder="Type the quantity..."
+                               value=""></td>
+
+                    <td>Alte specificatii</td>
+                    <td><input type="text" class="demoInputBox" name="specifications" placeholder="Type the specifications..."
+                               value=""></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <input type="submit" name="trimite" value="Trimite" class="btnSend">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<div class="padding-down"></div>
+<div class="padding-down"></div>
+{% endblock %}
