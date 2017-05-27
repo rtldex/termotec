@@ -1,4 +1,14 @@
 {% extends 'AppBundle::layout.html.twig' %}
 {% block content %}
-    index
+    <div class="slider slideshow">
+        <div class="slider-wrapper">
+            <img src="{{ asset('bundles/app/imgs/carousel/carousel1.jpg') }}" class="slide"/>
+            <img src="{{ asset('bundles/app/imgs/carousel/carousel2.jpg') }}" class="slide"/>
+            <img src="{{ asset('bundles/app/imgs/carousel/carousel3.jpg') }}" class="slide"/>
+            <img src="{{ asset('bundles/app/imgs/carousel/carousel4.jpg') }}" class="slide"/>
+            <img src="{{ asset('bundles/app/imgs/carousel/carousel5.jpg') }}" class="slide"/>
+            <img src="{{ asset('bundles/app/imgs/carousel/carousel6.jpg') }}" class="slide"/>
+            <img src="{{ asset('bundles/app/imgs/carousel/carousel7.jpg') }}" class="slide"/>
+        </div>
+    </div>
 {% endblock %}

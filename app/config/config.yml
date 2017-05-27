@@ -106,6 +106,9 @@ assetic:
         jquery:
             inputs:
                 - '%kernel.root_dir%/../vendor/components/jquery/jquery.js'
+        slideshow:
+            inputs:
+                - '%kernel.root_dir%/../src/AppBundle/Resources/public/js/slideshow.js'
 
 fos_user:
   db_driver: orm

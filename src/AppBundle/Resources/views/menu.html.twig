@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar">
     <div class="header">
         <div class="container">
             <div class="sigla">
@@ -7,8 +7,8 @@
                 </a>
             </div>
             <div class="termotec">
-                <a href="/index.php">
-                    <img src="{{ asset('bundles/app/imgs/termotec.png') }}" width="500" height="90"/>
+                <a href="{{ path('homepage') }}">
+                    <img src="{{ asset('bundles/app/imgs/termotec.png') }}"/>
                 </a>
             </div>
         </div>
@@ -38,10 +38,10 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if app.user %}
-                    <li><a href="/cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Contact</a></li>
-                    <li><a href="/logout.php"><span class="glyphicon glyphicon-log-out"></span>Log out</a></li>
+                    <li><a href="/cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></li>
+                    <li><a href="{{ path('logout') }}"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
                 {% else %}
-                    <li><a href="/login.php"><span class="glyphicon glyphicon-user"></span> Log in</a></li>
+                    <li><a href="{{ path('login') }}"><span class="glyphicon glyphicon-user"></span> Log in</a></li>
                     <li><i class="fa fa-envelope"></i><a href="/register.php">Register</a></li>
                 {% endif %}
             </ul>
