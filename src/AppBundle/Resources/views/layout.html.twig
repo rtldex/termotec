@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        {% block title %}
+            Termotec
+        {% endblock %}
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    {% block javascripts %}
+    {% endblock %}
+    {% stylesheets '@bootstrap_css' %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+    {% block stylesheets %}
+        {#<link rel="stylesheet" href="{{ asset('bundles/app/css/main.css') }}" type="text/css" media="all"/>#}
+    {% endblock %}
+</head>
+<body>
+<div id="container" class="container">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+        </div>
+    </nav>
+    <div id="content">
+        {% if app.session.flashbag.has('notice') %}
+            <div class="flash_notice">
+                {{ app.session.flashbag.get('notice') }}
+            </div>
+        {% endif %}
+
+        {% if app.session.flashbag.has('error') %}
+            <div class="flash_error">
+                {{ app.session.flashbag.get('error') }}
+            </div>
+        {% endif %}
+
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="content text-center">
+          <span>
+            &copy; Copyright 2017 Termotec - MG Tec Grup
+          </span>
+        </div>
+    </div>
+</div>
+{% javascripts '@jquery' '@bootstrap_js' %}
+<script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+</body>
