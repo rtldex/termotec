@@ -13,15 +13,12 @@
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
     {% endstylesheets %}
     {% block stylesheets %}
-        {#<link rel="stylesheet" href="{{ asset('bundles/app/css/main.css') }}" type="text/css" media="all"/>#}
+        <link rel="stylesheet" href="{{ asset('bundles/app/css/style.css') }}" type="text/css" media="all"/>
     {% endblock %}
 </head>
 <body>
 <div id="container" class="container">
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-        </div>
-    </nav>
+    {% include 'AppBundle::menu.html.twig' %}
     <div id="content">
         {% if app.session.flashbag.has('notice') %}
             <div class="flash_notice">
