@@ -1,1 +1,8 @@
 {% extends 'AppBundle::layout.html.twig' %}
+{% block content %}
+<div class="container">
+    <div class="alert alert-warning">
+        Pentru a trimite o cerere de oferta, va rugam sa va autentificati <a href="{{ path('login') }}" >aici</a>.
+    </div>
+</div>
+{% endblock %}

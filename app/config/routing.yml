@@ -12,3 +12,7 @@ tamplarie_pvc:
 cerere_oferta:
   path: /cerere_oferta
   defaults: { _controller: AppBundle:Oferta:cerere }
+
+cerere_oferta_success:
+  path: /cerere_oferta_success
+  defaults: { _controller: AppBundle:Oferta:success }
