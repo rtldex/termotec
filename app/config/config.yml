@@ -106,3 +106,11 @@ assetic:
         jquery:
             inputs:
                 - '%kernel.root_dir%/../vendor/components/jquery/jquery.js'
+
+fos_user:
+  db_driver: orm
+  firewall_name: main
+  user_class: AppBundle\Entity\User
+  from_email:
+    address: "register@termotec.ro"
+    sender_name: "Termotec Registration"
