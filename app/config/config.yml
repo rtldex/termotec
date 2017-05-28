@@ -133,3 +133,4 @@ sonata_admin:
             user:  admin.user
             product: admin.product
             contact: admin.contact
+            cerereoferta: admin.cerereoferta
