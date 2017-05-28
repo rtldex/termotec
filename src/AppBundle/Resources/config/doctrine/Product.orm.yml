@@ -30,3 +30,7 @@ AppBundle\Entity\Product:
     image_path:
       type: string
       length: 255
+  oneToMany:
+    items:
+      targetEntity: ItemComanda
+      mappedBy: product

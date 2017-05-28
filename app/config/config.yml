@@ -134,3 +134,4 @@ sonata_admin:
             product: admin.product
             contact: admin.contact
             cerereoferta: admin.cerereoferta
+            comanda: admin.comanda

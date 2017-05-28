@@ -11,3 +11,7 @@ AppBundle\Entity\Comanda:
       joinColumn:
         name: user_id
         referencedColumnName: id
+  oneToMany:
+    items:
+      targetEntity: ItemComanda
+      mappedBy: comanda

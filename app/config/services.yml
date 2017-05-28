@@ -30,3 +30,9 @@ services:
           arguments: [~, AppBundle\Entity\Cerere, ~]
           tags:
             - { name: sonata.admin, manager_type: orm, label: Cereri Oferta}
+
+    admin.comanda:
+          class: AppBundle\Admin\ComandaAdmin
+          arguments: [~, AppBundle\Entity\Comanda, ~]
+          tags:
+            - { name: sonata.admin, manager_type: orm, label: Comenzi }

@@ -7,6 +7,14 @@ namespace AppBundle\Entity;
  */
 class ItemComanda
 {
+
+    public function __toString()
+    {
+        $product = $this->getProduct();
+        return $this->getQuantity() . ' x ' . $product->getName() . ', ' . $product->getWidth() . 'x' .
+            $product->getHeight() . ', ' . $product->getOpening() . ', ' . $product->getColor();
+    }
+
     /**
      * @var integer
      */
