@@ -1,0 +1,8 @@
+{% extends 'AppBundle::layout.html.twig' %}
+{% form_theme form 'AppBundle:Default:formconfig.html.twig' %}
+{% block content %}
+    {{ form_start(form, {attr: {class: 'form-horizontal well col-sm-6 col-sm-offset-3' }}) }}
+    {{ form_widget(form) }}
+    <input type="submit" value="Trimite"/>
+    {{ form_end(form) }}
+{% endblock %}

@@ -284,4 +284,3 @@ class Product
         return $this->image_path;
     }
 }
-
