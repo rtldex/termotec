@@ -11,4 +11,16 @@ services:
       class: AppBundle\Admin\UserAdmin
       arguments: [~, AppBundle\Entity\User, ~]
       tags:
-        - { name: sonata.admin, manager_type: orm, label: User }
+        - { name: sonata.admin, manager_type: orm, label: Users }
+
+    admin.product:
+      class: AppBundle\Admin\ProductAdmin
+      arguments: [~, AppBundle\Entity\Product, ~]
+      tags:
+        - { name: sonata.admin, manager_type: orm, label: Products}
+
+    admin.contact:
+      class: AppBundle\Admin\ContactAdmin
+      arguments: [~, AppBundle\Entity\Contact, ~]
+      tags:
+        - { name: sonata.admin, manager_type: orm, label: Contact Messages}

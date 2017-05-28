@@ -130,4 +130,6 @@ sonata_admin:
     groups:
       termotec:
         items:
-            admin:  admin.user
+            user:  admin.user
+            product: admin.product
+            contact: admin.contact
