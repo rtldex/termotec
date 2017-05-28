@@ -34,7 +34,7 @@ class ContactAdmin extends AbstractAdmin
         $list = parent::configureActionButtons($action, $object);
         unset($list['create']);
         unset($list['edit']);
-        $list['delete'] = array('template' => 'SonataAdminBundle:Button:delete_button.html.twig');
+        $list['delete'] = array('template' => 'AppBundle:Admin:delete_button.html.twig');
         return $list;
     }
 

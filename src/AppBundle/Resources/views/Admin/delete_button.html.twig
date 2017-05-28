@@ -1,0 +1,8 @@
+{% if object is defined and admin.canAccessObject('delete', object) and admin.hasRoute('delete') %}
+    <li>
+        <a class="sonata-action-element" href="{{ admin.generateObjectUrl('delete', object) }}">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+            {{ 'action_delete'|trans({}, 'SonataAdminBundle') }}
+        </a>
+    </li>
+{% endif %}
