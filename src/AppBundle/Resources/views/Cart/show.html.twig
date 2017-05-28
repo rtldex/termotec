@@ -1,0 +1,48 @@
+{% extends 'AppBundle::layout.html.twig' %}
+{% block content %}
+    <h1 class="text-center">Shopping cart</h1>
+    {% if cart|length > 0 %}
+        <form action="" method="POST">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Nume</th>
+                    <th>Marime</th>
+                    <th>Deschidere</th>
+                    <th>Culoare</th>
+                    <th style="width: 100px;">Cantitate</th>
+                    <th>Pret (RON)</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in cart %}
+                    <tr>
+                        <td>{{ item.item.name }}</td>
+                        <td>{{ item.item.width }} x {{ item.item.height }} cm</td>
+                        <td>{{ item.item.opening }}</td>
+                        <td>{{ item.item.color }}</td>
+                        <td><input name="shoppingcart[{{ item.item.id }}]" class="form-control" type="text" value="{{ item.quantity }}"/></td>
+                        <td>{{ item.totalPrice }}</td>
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <td><b>TOTAL</b></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><b>{{ totalPrice }}</b></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="navbar navbar-right">
+                <input name="update" type="submit" class="btn btn-primary" role="button" value="Update"/>
+                <input name="send" type="submit" class="btn btn-primary" role="button" value="Trimite Comanda"/>
+            </div>
+        </form>
+    {% else %}
+        <div class="alert alert-info">
+            Shopping cart-ul este gol.
+        </div>
+    {% endif %}
+{% endblock %}

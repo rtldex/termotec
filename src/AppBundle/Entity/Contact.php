@@ -139,4 +139,3 @@ class Contact
         return $this->subject;
     }
 }
-

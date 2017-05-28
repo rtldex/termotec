@@ -50,3 +50,8 @@
 .serviciu .thumbnail {
     height: 510px;
 }
+
+.contact-info {
+    list-style: none;
+    margin-left: 50px;
+}

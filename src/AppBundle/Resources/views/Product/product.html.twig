@@ -9,10 +9,13 @@
             <p>Culoare : {{ entity.color }}</p>
             <h3>Pret : {{ entity.price }} lei </h3>
             {% if app.user %}
-                <p><a href="/cart.php?action=add&productId=<?php echo $entity['id']; ?>"
-                      class="btn btn-primary" role="button"><span
-                                class="glyphicon glyphicon-shopping-cart"></span> Adauga in cos</a>
-                </p>
+                <a href="{{ path('shopping_cart_add', {'id': entity.id}) }}" class="btn btn-primary" role="button">
+                    <span class="glyphicon glyphicon-shopping-cart"></span> Adauga in cos
+                </a>
+            {% else %}
+                <a href="{{ path('login') }}" class="btn btn-primary" role="button">
+                    <span class="glyphicon glyphicon-shopping-cart"></span> Adauga in cos
+                </a>
             {% endif %}
         </div>
     </div>

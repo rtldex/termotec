@@ -1,8 +1,49 @@
 {% extends 'AppBundle::layout.html.twig' %}
 {% form_theme form 'AppBundle:Default:formconfig.html.twig' %}
 {% block content %}
-    {{ form_start(form, {attr: {class: 'form-horizontal well col-sm-6 col-sm-offset-3' }}) }}
+    {{ form_start(form, {attr: {class: 'form-horizontal well col-sm-6' }}) }}
     {{ form_widget(form) }}
     <input type="submit" value="Trimite"/>
     {{ form_end(form) }}
+    <div class="col-sm-6">
+        <ul class="contact-info">
+            <li class="home"><span class="glyphicon glyphicon-home"></span> Strada Văii numărul 2, 405200 Dej, județul
+                Cluj
+            </li>
+            <li class="phone"><span class="glyphicon glyphicon-phone-alt"></span> 0264 213 091</li>
+            <li class="fax"><span class="glyphicon glyphicon-phone-alt"></span> fax: 0264 222 207
+            </li>
+            <li class="mail"><span class="glyphicon glyphicon-envelope"></span> office@mg-tec.ro</li>
+        </ul>
+    </div>
+    <div class="map col-sm-6">
+        <h1 class="text-center"> Localizare pe hartă</h1>
+        <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+        <div style='overflow:hidden;height:360px;width:450px; float: right;'>
+            <div id='gmap_canvas' style='height:360px;width:450px;'></div>
+        </div>
+        <style>#gmap_canvas img {
+                max-width: none !important;
+                background: none !important
+            }</style>
+    </div>
+    <script type='text/javascript'>function init_map() {
+            var myOptions = {
+                zoom: 10,
+                center: new google.maps.LatLng(47.1154175, 23.859880999999973),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+            marker = new google.maps.Marker({
+                map: map,
+                position: new google.maps.LatLng(47.1154175, 23.859880999999973)
+            });
+            infowindow = new google.maps.InfoWindow({content: '<strong style="color:#000000;"> SC TERMOTEC SA &ensp;-&ensp;</strong><strong style="color:#000000;">Strada Vaii nr 2,Dej,Cluj, Romania</strong>'});
+            google.maps.event.addListener(marker, 'click', function () {
+                infowindow.open(map, marker);
+            });
+            infowindow.open(map, marker);
+        }
+        google.maps.event.addDomListener(window, 'load', init_map);</script>
+    </div>
 {% endblock %}

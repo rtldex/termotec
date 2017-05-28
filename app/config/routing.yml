@@ -44,3 +44,17 @@ porti_garaj:
 tehnica_parasolara:
   path: /tehnica_parasolara
   defaults: { _controller: AppBundle:Product:tehnicaParasolara }
+
+shopping_cart_add:
+  path: /shopping_cart_add/{id}
+  requirements:
+    id: \d+
+  defaults: { _controller: AppBundle:Cart:add }
+
+shopping_cart_show:
+  path: /shopping_cart
+  defaults: { _controller: AppBundle:Cart:show }
+
+shopping_cart_send_success:
+  path: /shopping_cart_send_success
+  defaults: { _controller: AppBundle:Cart:sendSuccess }

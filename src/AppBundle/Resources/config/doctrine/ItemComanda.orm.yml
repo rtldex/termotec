@@ -1,0 +1,21 @@
+AppBundle\Entity\ItemComanda:
+  type: entity
+  table: item_comanda
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    quantity:
+      type: integer
+  manyToOne:
+    comanda:
+      targetEntity: Comanda
+      joinColumn:
+        name: comanda_id
+        referencedColumnName: id
+    product:
+      targetEntity: Product
+      joinColumn:
+        name: product_id
+        referencedColumnName: id
