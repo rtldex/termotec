@@ -102,7 +102,11 @@ class User implements UserInterface
      */
     public function getRoles()
     {
-        return array('ROLE_USER');
+        if ($this->admin) {
+            return array('ROLE_ADMIN');
+        } else {
+            return array('ROLE_USER');
+        }
     }
 
     /**
@@ -124,7 +128,7 @@ class User implements UserInterface
      */
     public function getUsername()
     {
-        $this->getEmail();
+        return $this->getEmail();
     }
 
     /**
@@ -135,5 +139,40 @@ class User implements UserInterface
      */
     public function eraseCredentials()
     {
+    }
+
+    /**
+     * @var boolean
+     */
+    private $admin;
+
+
+    /**
+     * Set admin
+     *
+     * @param boolean $admin
+     *
+     * @return User
+     */
+    public function setAdmin($admin)
+    {
+        $this->admin = $admin;
+
+        return $this;
+    }
+
+    /**
+     * Get admin
+     *
+     * @return boolean
+     */
+    public function getAdmin()
+    {
+        return $this->admin;
+    }
+
+    public function getUser()
+    {
+        return $this->getEmail();
     }
 }

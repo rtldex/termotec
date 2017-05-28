@@ -13,3 +13,6 @@ AppBundle\Entity\User:
       type: string
       length: 255
       unique: true
+    admin:
+      type: boolean
+      default: false
