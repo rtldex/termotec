@@ -15,4 +15,12 @@ class DefaultController extends Controller
     {
         return $this->render('AppBundle:Default:index.html.twig');
     }
+
+    /**
+     * @Route("/servicii", name="servicii")
+     */
+    public function serviciiAction()
+    {
+        return $this->render('AppBundle:Default:servicii.html.twig');
+    }
 }

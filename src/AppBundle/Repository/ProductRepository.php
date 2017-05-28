@@ -20,9 +20,44 @@ class ProductRepository extends \Doctrine\ORM\EntityRepository
 
     public function getFerestreSimple()
     {
+        return $this->getProductsOfType(self::FERESTRE_SIMPLE);
+    }
+
+    public function getFerestreDuble()
+    {
+        return $this->getProductsOfType(self::FERESTRE_DUBLE);
+    }
+
+    public function getUsiBalcon()
+    {
+        return $this->getProductsOfType(self::USI_DE_BALCON);
+    }
+
+    public function getUsiInterior()
+    {
+        return $this->getProductsOfType(self::USI_DE_INTERIOR);
+    }
+
+    public function getGlafuri()
+    {
+        return $this->getProductsOfType(self::GLAFURI);
+    }
+
+    public function getPortiGaraj()
+    {
+        return $this->getProductsOfType(self::PORTI_DE_GARAJ);
+    }
+
+    public function getTehnicaParasolara()
+    {
+        return $this->getProductsOfType(self::TEHNICA_PARASOLARA);
+    }
+
+    public function getProductsOfType($type)
+    {
         $qb = $this->createQueryBuilder('c');
         $qb->andWhere('c.tip = :type')
-            ->setParameter('type', self::FERESTRE_SIMPLE);
+            ->setParameter('type', $type);
         $query = $qb->getQuery();
         return $query->getResult();
     }

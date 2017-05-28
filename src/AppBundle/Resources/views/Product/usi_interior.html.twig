@@ -1,11 +1,11 @@
 {% extends 'AppBundle::layout.html.twig' %}
 {% block content %}
-    <h1 class="text-center">Ferestre simple</h1>
+    <h1 class="text-center">Usi de interior</h1>
     <div class="spacer30"></div>
     <div class="container">
         <div class="row" id="row">
-            {% for fereastra in products %}
-                {% include 'AppBundle:Product:product.html.twig' with {entity: fereastra} %}
+            {% for product in products %}
+                {% include 'AppBundle:Product:product.html.twig' with {entity: product} %}
             {% endfor %}
         </div>
     </div>

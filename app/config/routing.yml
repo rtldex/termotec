@@ -20,3 +20,27 @@ cerere_oferta_success:
 ferestre_simple:
   path: /ferestre_simple
   defaults: { _controller: AppBundle:Product:ferestreSimple }
+
+ferestre_duble:
+  path: /ferestre_duble
+  defaults: { _controller: AppBundle:Product:ferestreDuble }
+
+usi_balcon:
+  path: /usi_balcon
+  defaults: { _controller: AppBundle:Product:usiBalcon }
+
+usi_interior:
+  path: /usi_interior
+  defaults: { _controller: AppBundle:Product:usiInterior }
+
+glafuri:
+  path: /glafuri
+  defaults: { _controller: AppBundle:Product:glafuri }
+
+porti_garaj:
+  path: /porti_garaj
+  defaults: { _controller: AppBundle:Product:portiGaraj }
+
+tehnica_parasolara:
+  path: /tehnica_parasolara
+  defaults: { _controller: AppBundle:Product:tehnicaParasolara }

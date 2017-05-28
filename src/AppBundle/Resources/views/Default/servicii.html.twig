@@ -1,0 +1,53 @@
+{% extends 'AppBundle::layout.html.twig' %}
+{% block title %}
+    Sevicii
+{% endblock %}
+{% block content %}
+
+    <div class="container">
+        <div class="row" id="row">
+            <div class="padding-up"></div>
+            <div class="col-md-4 serviciu">
+                <div class="thumbnail"><img src="{{ asset('/bundles/app/imgs/servicii/masuratori.jpg') }}">
+                    <div class="caption">
+                        <h3> Masuratori </h3>
+                        <p>Va punem la dispozitie un specialist din cadrul departamentului tehnic,
+                            pentru a se deplasa la domiciliu si a efectua masuratori si o schita a lucrarii,
+                            conform nevoilor dumneavoastra. Consilierea si efectuarea masuratorilor sunt gratuite.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 serviciu montaj">
+                <div class="thumbnail"><img src="{{ asset('/bundles/app/imgs/servicii/montaj.jpg') }}">
+                    <div class="caption">
+                        <div class="spacer40"></div>
+                        <h3> Montaj </h3>
+                        <p>Montajul este asigurat de catre echipe de montaj profesionale.
+                            Am selectat cei mai buni profesionisti, specializati pe montajul tamplariei de orice tip si
+                            a accesoriilor.
+                            Montajul produselor este inclus in pretul lucrarii atat in localitatea Dej, cat si in
+                            zonele apropiate orasului.
+                            Insa pentru zone mai indepartate, va rugam sa ne contactati la numarul de telefon
+                            0264 213091.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 serviciu">
+                <div class="thumbnail">
+                    <img src="{{ asset('/bundles/app/imgs/servicii/reparatii.jpg') }}" width="330" height="330">
+                    <div class="caption">
+                        <h3> Reparatii </h3>
+                        <p>Indiferent daca tamplaria este montata sau nu de firma noastra,
+                            oferim reparatii ale ferestrelor si usilor din tamplarie PVC sau aluminiu .</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="transport">
+            <img src="{{ asset('/bundles/app/imgs/servicii/termotec_transport.png') }}"/>
+        </div>
+    </div>
+{% endblock %}

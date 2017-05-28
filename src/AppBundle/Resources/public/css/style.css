@@ -1,10 +1,8 @@
-/*
- * Header section
- */
 .sigla {
     float: left;
     margin: 10px;
 }
+
 .termotec {
     margin: 40px 20px;
     float: left;
@@ -14,14 +12,17 @@
     .sigla {
         display: none;
     }
+
     .termotec {
         margin: 10px 5px;
     }
+
     .termotec img {
         max-width: 100%;
     }
 }
-.video video{
+
+.video video {
     float: right;
     max-width: 100%;
 }
@@ -29,12 +30,23 @@
 .spacer10, .spacer20, .spacer30 {
     display: block;;
 }
+
 .spacer10 {
     height: 10px;
 }
+
 .spacer20 {
     height: 20px;
 }
+
 .spacer30 {
     height: 30px;
+}
+
+.spacer40 {
+    height: 30px;
+}
+
+.serviciu .thumbnail {
+    height: 510px;
 }
