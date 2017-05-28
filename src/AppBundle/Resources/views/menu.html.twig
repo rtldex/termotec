@@ -38,13 +38,15 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if app.user %}
-                    <li><a href="{{ path('shopping_cart_show') }}"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a>
+                    <li><a href="{{ path('shopping_cart_show') }}"><span
+                                    class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a>
                     </li>
                     <li><a href="{{ path('logout') }}"><span class="glyphicon glyphicon-log-out"></span> Log out</a>
                     </li>
                 {% else %}
                     <li><a href="{{ path('login') }}"><span class="glyphicon glyphicon-user"></span> Log in</a></li>
-                    <li><i class="fa fa-envelope"></i><a href="/register.php">Register</a></li>
+                    <li><a href="{{ path('register') }}"><span class="glyphicon glyphicon-edit"></span>
+                            Register</a></li>
                 {% endif %}
             </ul>
         </nav>

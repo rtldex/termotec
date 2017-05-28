@@ -52,4 +52,3 @@ class Comanda
         return $this->user;
     }
 }
-

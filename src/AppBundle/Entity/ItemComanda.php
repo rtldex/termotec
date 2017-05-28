@@ -110,4 +110,3 @@ class ItemComanda
         return $this->product;
     }
 }
-

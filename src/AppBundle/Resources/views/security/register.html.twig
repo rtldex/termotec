@@ -1,0 +1,12 @@
+{% extends 'AppBundle::layout.html.twig' %}
+{% form_theme form 'AppBundle:Default:formconfig.html.twig' %}
+
+{% block content %}
+    {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+    {{ form_start(form, {attr: {class: 'form-horizontal well col-sm-6 col-sm-offset-3' }}) }}
+    {{ form_widget(form) }}
+    <input type="submit" value="Inregistreaza"/>
+    {{ form_end(form) }}
+{% endblock %}
