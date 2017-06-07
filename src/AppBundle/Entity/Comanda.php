@@ -7,6 +7,15 @@ namespace AppBundle\Entity;
  */
 class Comanda
 {
+    public function getTotal() {
+        $total = 0;
+        $items = $this->getItems();
+        foreach ($items as $item) {
+            $total += $item->getTotal();
+        }
+        return $total . ' RON';
+    }
+
     /**
      * @var integer
      */

@@ -33,8 +33,9 @@ class CartController extends Controller
     public function showAction(Request $request)
     {
         $this->request = $request;
+        $fails = array();
         if ($request->getMethod() === 'POST' && $request->get('update') != null) {
-            $this->updateShoppingCart($request->get('shoppingcart'));
+            $fails = $this->updateShoppingCart($request->get('shoppingcart'));
         }
         if ($request->getMethod() === 'POST' && $request->get('send') != null) {
             $this->sendShoppingCart();
@@ -44,7 +45,7 @@ class CartController extends Controller
         $cart = $this->getCartWithDetails();
         $totalPrice = $this->calculateTotalPrice($cart);
 
-        return $this->render('AppBundle:Cart:show.html.twig', array('cart' => $cart, 'totalPrice' => $totalPrice));
+        return $this->render('AppBundle:Cart:show.html.twig', array('cart' => $cart, 'totalPrice' => $totalPrice, 'fails' => $fails));
     }
 
     public function sendSuccessAction()
@@ -100,12 +101,20 @@ class CartController extends Controller
     private function updateShoppingCart($parameters)
     {
         $cart = $this->getCart();
+        $repo = $this->getDoctrine()->getRepository('AppBundle:Product');
+        $fails = array();
         foreach ($parameters as $itemId => $quantity) {
-            if (isset($cart[$itemId])) {
-                $cart[$itemId] = intval($quantity);
+            $product = $repo->find($itemId);
+            if ($product->getStock() >= $quantity) {
+                if (isset($cart[$itemId])) {
+                    $cart[$itemId] = intval($quantity);
+                }
+            } else {
+                $fails[] = $product;
             }
         }
         $this->saveCart($cart);
+        return $fails;
     }
 
     private function sendShoppingCart()

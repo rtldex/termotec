@@ -8,10 +8,14 @@ namespace AppBundle\Entity;
 class ItemComanda
 {
 
+    public function getTotal() {
+        return $this->quantity * $this->getProduct()->getPrice();
+    }
+
     public function __toString()
     {
         $product = $this->getProduct();
-        return $this->getQuantity() . ' x ' . $product->getName() . ', ' . $product->getWidth() . 'x' .
+        return $this->getTotal() . ' ron => ' . $this->getQuantity() . ' x ' . $product->getName() . ', ' . $product->getWidth() . 'x' .
             $product->getHeight() . ', ' . $product->getOpening() . ', ' . $product->getColor();
     }
 

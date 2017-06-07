@@ -1,6 +1,11 @@
 {% extends 'AppBundle::layout.html.twig' %}
 {% block content %}
     <h1 class="text-center">Shopping cart</h1>
+    {% if fails|length > 0 %}
+        {% for fail in fails %}
+            <div class="alert alert-danger">Cantitatea maxima disponibila pentru produsul <b>{{ fail.name }}</b> este <b>{{ fail.stock }}</b></div>
+        {% endfor %}
+    {% endif %}
     {% if cart|length > 0 %}
         <form action="" method="POST">
             <table class="table">
@@ -21,7 +26,8 @@
                         <td>{{ item.item.width }} x {{ item.item.height }} cm</td>
                         <td>{{ item.item.opening }}</td>
                         <td>{{ item.item.color }}</td>
-                        <td><input name="shoppingcart[{{ item.item.id }}]" class="form-control" type="text" value="{{ item.quantity }}"/></td>
+                        <td><input name="shoppingcart[{{ item.item.id }}]" class="form-control" type="text"
+                                   value="{{ item.quantity }}"/></td>
                         <td>{{ item.totalPrice }}</td>
                     </tr>
                 {% endfor %}

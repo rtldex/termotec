@@ -20,7 +20,7 @@ class ComandaAdmin extends AbstractAdmin
 
     protected function configureShowFields(ShowMapper $show)
     {
-        $show->add('user')->add('items');
+        $show->add('user')->add('items')->add('total');
     }
 
     public function configureActionButtons($action, $object = null)
